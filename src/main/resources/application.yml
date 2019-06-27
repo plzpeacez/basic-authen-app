@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb?useUnicode=true&characterEncoding=UTF-8
+    username: postgres
+    password: postgres
+  jpa:
+    generate-ddl: true
+
+plzpeacez:
+  app:
+    jwtSecret: jwteMoneyWalletSecretKey
+    jwtExpiration: 86400
