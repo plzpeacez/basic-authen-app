@@ -20,7 +20,7 @@ import java.util.Set;
         })
 })
 @Getter @Setter
-public class User{
+public class User extends AbstractAuditingEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

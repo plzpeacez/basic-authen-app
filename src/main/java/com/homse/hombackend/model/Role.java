@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "roles")
 @Getter @Setter
-public class Role {
+public class Role extends AbstractAuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
