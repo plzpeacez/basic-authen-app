@@ -1,6 +1,6 @@
-package com.homse.hombackend.security.jwt;
+package com.homse.hombackend.infrastructure.security.jwt;
 
-import com.homse.hombackend.services.UserDetailsServiceImpl;
+import com.homse.hombackend.infrastructure.services.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
