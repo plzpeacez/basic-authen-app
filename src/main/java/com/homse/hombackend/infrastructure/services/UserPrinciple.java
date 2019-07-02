@@ -1,7 +1,7 @@
-package com.homse.hombackend.services;
+package com.homse.hombackend.infrastructure.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.homse.hombackend.model.User;
+import com.homse.hombackend.infrastructure.model.User;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

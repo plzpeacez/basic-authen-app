@@ -1,6 +1,6 @@
-package com.homse.hombackend.security.jwt;
+package com.homse.hombackend.infrastructure.security.jwt;
 
-import com.homse.hombackend.services.UserPrinciple;
+import com.homse.hombackend.infrastructure.services.UserPrinciple;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.homse.hombackend.model;
+package com.homse.hombackend.infrastructure.model;
 
 
 import lombok.Getter;
@@ -20,7 +20,7 @@ import java.util.Set;
         })
 })
 @Getter @Setter
-public class User{
+public class User extends AbstractAuditingEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,14 +1,14 @@
-package com.homse.hombackend.controller;
+package com.homse.hombackend.infrastructure.controller;
 
-import com.homse.hombackend.message.request.LoginForm;
-import com.homse.hombackend.message.request.SignUpForm;
-import com.homse.hombackend.message.response.JwtResponse;
-import com.homse.hombackend.model.Role;
-import com.homse.hombackend.model.RoleName;
-import com.homse.hombackend.model.User;
-import com.homse.hombackend.repository.RoleRepository;
-import com.homse.hombackend.repository.UserRepository;
-import com.homse.hombackend.security.jwt.JwtProvider;
+import com.homse.hombackend.infrastructure.message.request.LoginForm;
+import com.homse.hombackend.infrastructure.message.request.SignUpForm;
+import com.homse.hombackend.infrastructure.message.response.JwtResponse;
+import com.homse.hombackend.infrastructure.model.Role;
+import com.homse.hombackend.infrastructure.model.RoleName;
+import com.homse.hombackend.infrastructure.model.User;
+import com.homse.hombackend.infrastructure.repository.RoleRepository;
+import com.homse.hombackend.infrastructure.repository.UserRepository;
+import com.homse.hombackend.infrastructure.security.jwt.JwtProvider;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,19 +86,19 @@ public class AuthRestAPIs {
             switch(role) {
                 case "admin":
                     Role adminRole = roleRepository.findByName(RoleName.ROLE_ADMIN)
-                            .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
+                            .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not found."));
                     roles.add(adminRole);
 
                     break;
                 case "pm":
                     Role pmRole = roleRepository.findByName(RoleName.ROLE_PM)
-                            .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
+                            .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not found."));
                     roles.add(pmRole);
 
                     break;
                 default:
                     Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
-                            .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
+                            .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not found."));
                     roles.add(userRole);
             }
         });

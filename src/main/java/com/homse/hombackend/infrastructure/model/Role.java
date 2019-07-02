@@ -1,4 +1,4 @@
-package com.homse.hombackend.model;
+package com.homse.hombackend.infrastructure.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "roles")
 @Getter @Setter
-public class Role {
+public class Role extends AbstractAuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

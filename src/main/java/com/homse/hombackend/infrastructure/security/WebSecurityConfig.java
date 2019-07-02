@@ -1,8 +1,8 @@
-package com.homse.hombackend.security;
+package com.homse.hombackend.infrastructure.security;
 
-import com.homse.hombackend.security.jwt.JwtAuthEntryPoint;
-import com.homse.hombackend.security.jwt.JwtAuthTokenFilter;
-import com.homse.hombackend.services.UserDetailsServiceImpl;
+import com.homse.hombackend.infrastructure.security.jwt.JwtAuthEntryPoint;
+import com.homse.hombackend.infrastructure.security.jwt.JwtAuthTokenFilter;
+import com.homse.hombackend.infrastructure.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

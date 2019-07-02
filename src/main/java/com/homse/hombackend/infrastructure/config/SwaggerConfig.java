@@ -1,4 +1,4 @@
-package com.homse.hombackend.config;
+package com.homse.hombackend.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

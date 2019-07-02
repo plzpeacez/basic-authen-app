@@ -1,6 +1,6 @@
-package com.homse.hombackend.security.jwt;
+package com.homse.hombackend.infrastructure.security.jwt;
 
-import com.homse.hombackend.services.UserDetailsServiceImpl;
+import com.homse.hombackend.infrastructure.services.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,9 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
     @Autowired
     private JwtProvider tokenProvider;
 
+    // config
+    private static final String AUTHORIZATION_HEADER = "Authorization";
+
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
@@ -31,11 +34,16 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
         try {
             String jwt = getJwt(request);
             if (jwt != null && tokenProvider.validateJwtToken(jwt)) {
-                String username = tokenProvider.getUserNameFromJwtToken(jwt);
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-                UsernamePasswordAuthenticationToken authentication
-                        = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                UsernamePasswordAuthenticationToken authentication = getAuthenticaion(jwt);
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                // continue session every request
+                jwt = tokenProvider.generateJwtToken(authentication);
+                // New authentication with New JWT
+                authentication = getAuthenticaion(jwt);
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                // set new JWT to response header
+                response.setHeader(AUTHORIZATION_HEADER, jwt);
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
@@ -53,5 +61,11 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
         }
 
         return null;
+    }
+
+    private UsernamePasswordAuthenticationToken getAuthenticaion(String token) {
+        String username = tokenProvider.getUserNameFromJwtToken(token);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
     }
 }

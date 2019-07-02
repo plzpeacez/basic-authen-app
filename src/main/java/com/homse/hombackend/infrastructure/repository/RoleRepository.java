@@ -1,7 +1,7 @@
-package com.homse.hombackend.repository;
+package com.homse.hombackend.infrastructure.repository;
 
-import com.homse.hombackend.model.Role;
-import com.homse.hombackend.model.RoleName;
+import com.homse.hombackend.infrastructure.model.Role;
+import com.homse.hombackend.infrastructure.model.RoleName;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
