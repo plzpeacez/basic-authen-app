@@ -1,6 +1,6 @@
-package com.homse.hombackend.repository;
+package com.homse.hombackend.infrastructure.repository;
 
-import com.homse.hombackend.model.User;
+import com.homse.hombackend.infrastructure.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

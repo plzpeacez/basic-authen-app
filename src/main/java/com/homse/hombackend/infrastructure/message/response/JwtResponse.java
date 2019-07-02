@@ -1,4 +1,4 @@
-package com.homse.hombackend.message.response;
+package com.homse.hombackend.infrastructure.message.response;
 
 import lombok.Getter;
 import lombok.Setter;

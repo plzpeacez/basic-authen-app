@@ -1,7 +1,7 @@
-package com.homse.hombackend.services;
+package com.homse.hombackend.infrastructure.services;
 
-import com.homse.hombackend.model.User;
-import com.homse.hombackend.repository.UserRepository;
+import com.homse.hombackend.infrastructure.model.User;
+import com.homse.hombackend.infrastructure.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

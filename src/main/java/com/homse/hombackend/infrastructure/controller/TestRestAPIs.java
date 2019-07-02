@@ -1,4 +1,4 @@
-package com.homse.hombackend.controller;
+package com.homse.hombackend.infrastructure.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

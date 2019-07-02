@@ -1,4 +1,4 @@
-package com.homse.hombackend.model;
+package com.homse.hombackend.infrastructure.model;
 
 public enum  RoleName {
     ROLE_USER,

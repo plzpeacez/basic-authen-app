@@ -5,6 +5,11 @@ spring:
     password: postgres
   jpa:
     generate-ddl: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true # work around fix bug
 
 plzpeacez:
   app:

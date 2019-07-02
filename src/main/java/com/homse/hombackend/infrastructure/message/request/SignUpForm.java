@@ -1,4 +1,4 @@
-package com.homse.hombackend.message.request;
+package com.homse.hombackend.infrastructure.message.request;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

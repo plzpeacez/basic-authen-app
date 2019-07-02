@@ -1,4 +1,4 @@
-package com.homse.hombackend.exception;
+package com.homse.hombackend.infrastructure.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

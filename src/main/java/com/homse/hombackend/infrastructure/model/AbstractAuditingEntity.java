@@ -1,4 +1,4 @@
-package com.homse.hombackend.model;
+package com.homse.hombackend.infrastructure.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
